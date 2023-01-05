@@ -1,0 +1,31 @@
+@import "./colors";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	min-height: 100vh;
+}
+
+body {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
