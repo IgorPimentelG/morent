@@ -2,3 +2,5 @@ node_modules
 public
 tsconfig*.json
 vite.config.js
+covarege
+jest.config.*
