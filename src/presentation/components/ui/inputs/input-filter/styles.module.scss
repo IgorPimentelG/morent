@@ -1,0 +1,30 @@
+@import "../../../../styles/colors";
+
+.inputWrap {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 10px 15px 10px 10px;
+	border-radius: 30px;
+	color: $secondary-400;
+	background-color: $white;
+	border: 1px solid rgba($primary-100, 0.4);
+
+	input {
+		border: none;
+		outline: none;
+		width: 100%;
+
+		&::placeholder {
+			color: $secondary-400;
+		}
+	}
+
+	button {
+		transition: all 500ms ease;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}

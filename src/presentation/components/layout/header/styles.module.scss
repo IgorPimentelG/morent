@@ -9,7 +9,18 @@
 	left: 0;
 	right: 0;
 	background-color: $white;
-	border-bottom: 1px solid rgba($primary-100, 0.4);
+	border-bottom: 2px solid rgba($primary-100, 0.4);
+
+	.filter {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		gap: 64px;
+
+		div:nth-child(2) {
+			width: 400px;
+		}
+	}
 
 	.actions {
 		display: flex;
