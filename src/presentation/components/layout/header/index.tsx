@@ -16,13 +16,13 @@ const Header: React.FC = () => {
 				/>
 			</div>
 			<div className={styles.actions}>
-				<IconButton title="Favorites" Icon={FaHeart} action={() => {}}	/>
+				<IconButton title="Favorites" Icon={FaHeart} action={() => {}} />
 				<IconButton title="Notifications" Icon={FaBell} action={() => {}}	/>
 				<IconButton title="Settings" Icon={FaCog} action={() => {}}	/>
 				<IconProfile />
 			</div>
 		</header>
-	)
-}
+	);
+};
 
 export { Header };

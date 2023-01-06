@@ -1,20 +1,23 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styles from './styles.module.scss';
 
-type Props = {
+type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
 	Icon: React.FC;
-	title: string;
 	hasNotification?: boolean;
 	action: () => void;
 }
 
-const IconButton: React.FC<Props> = ({ Icon, hasNotification, title, action }) => {
+const IconButton: React.FC<Props> = ({ Icon, hasNotification, action, ...props }) => {
 	return (
-		<button className={styles.buttonWrap} title={title} onClick={action}>
+		<button
+			{...props}
+			className={styles.buttonWrap}
+			onClick={action}
+		>
 			<Icon />
 			{hasNotification && <div className={styles.notification} />}
 		</button>
 	);
-}
+};
 
 export { IconButton };
