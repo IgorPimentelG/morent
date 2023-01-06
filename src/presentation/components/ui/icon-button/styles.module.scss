@@ -1,0 +1,29 @@
+@import "../../../styles/colors";
+
+.buttonWrap {
+	display: flex;
+	position: relative;
+  justify-content: center;
+	align-items: center;
+	height: 40px;
+	width: 40px;
+	color: $secondary-400;
+	font-size: 16px;
+	transition: all 500ms;
+	border-radius: 100%;
+	border: 1px solid rgba($primary-100, 0.4);
+
+	&:hover {
+		transform: scale(1.2);
+	}
+
+	.notification {
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		top: -2px;
+		left: 25px;
+		border-radius: 100%;
+		background-color: $error-500;
+	}
+}

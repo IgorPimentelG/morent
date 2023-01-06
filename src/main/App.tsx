@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { ProviderRoutes } from '@main/config/routes/provider.routes';
+
 const App: React.FC = () => (
-	<div>
-      Hello World!
-	</div>
+	<>
+		<ProviderRoutes />
+	</>
 );
 
 export {App};

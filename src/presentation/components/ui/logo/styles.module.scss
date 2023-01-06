@@ -1,0 +1,12 @@
+@import "../../../styles/colors";
+
+.logoWrap {
+	display: flex;
+	width: min-content;
+
+	h1 {
+		font-size: 32px;
+		text-transform: uppercase;
+		color: $primary-500;
+	}
+}
