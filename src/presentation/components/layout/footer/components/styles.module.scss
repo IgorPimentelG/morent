@@ -1,0 +1,27 @@
+@import "../../../../styles/colors";
+
+.linksWrap {
+	display: flex;
+	flex-direction: column;
+
+	h4 {
+		margin-bottom: 24px;
+		color: $secondary-500;
+	}
+
+	.optionsWrap {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		a {
+			color: $secondary-400;
+			transition: all 500ms ease;
+
+			&:hover {
+				color: $secondary-500;
+				transform: scale(1.1);
+			}
+		}
+	}
+}
