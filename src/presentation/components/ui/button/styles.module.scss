@@ -1,0 +1,49 @@
+@import "../../../styles/colors";
+
+.buttonWrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	padding: 10px 15px;
+
+	&[data-type="PRIMARY"] {
+		font-weight: 700px;
+		color: $white;
+		background-color: $primary-500;
+
+		&:active {
+			background-color: $primary-700;
+		}
+
+		&:disabled {
+			cursor: default;
+			color: rgba($white, 0.7);
+			background-color: rgba($primary-500, 0.3);
+		}
+	}
+
+	&[data-type="SECONDARY"] {
+		color: $secondary-400;
+		background-color: $white;
+		border: 1px solid $secondary-300;
+
+		&:hover {
+			color: $secondary-500;
+			background-color: $white;
+			border: 1px solid $secondary-400;
+		}
+
+		&:active {
+			color: $secondary-400;
+			background-color: $primary-100;
+			border: 1px solid $secondary-300;
+		}
+
+		&:disabled {
+			cursor: default;
+			color: $secondary-200;
+			border: 1px solid $primary-100;
+		}
+	}
+}
