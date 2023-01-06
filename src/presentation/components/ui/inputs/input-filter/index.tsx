@@ -9,7 +9,7 @@ type Props = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>
 }
 
 const InputFilter: React.FC<Props> = ({ action, filter, ...props }) => {
-  return (
+	return (
 		<div className={styles.inputWrap}>
 			<BsSearch />
 			<input {...props} />
@@ -18,6 +18,6 @@ const InputFilter: React.FC<Props> = ({ action, filter, ...props }) => {
 			</button>
 		</div>
 	);
-}
+};
 
 export { InputFilter };

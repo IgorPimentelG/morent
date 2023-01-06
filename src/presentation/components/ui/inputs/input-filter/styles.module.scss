@@ -10,6 +10,11 @@
 	background-color: $white;
 	border: 1px solid rgba($primary-100, 0.4);
 
+	&:focus-within {
+		border: 1px solid $primary-200;
+
+	}
+
 	input {
 		border: none;
 		outline: none;
@@ -21,6 +26,7 @@
 	}
 
 	button {
+		display: flex;
 		transition: all 500ms ease;
 
 		&:hover {

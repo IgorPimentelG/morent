@@ -12,7 +12,6 @@
 	transition: all 500ms;
 	border-radius: 100%;
 	border: 1px solid rgba($primary-100, 0.4);
-	overflow: hidden;
 
 	&[disabled] {
 		cursor: default !important;
@@ -26,6 +25,7 @@
 		object-fit: cover;
 		height: 40px;
 		width: 40px;
+		border-radius: 100%;
 	}
 
 	.notification {
