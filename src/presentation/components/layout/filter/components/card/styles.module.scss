@@ -1,1 +1,40 @@
-@import "../../../styles/colors";
+@import "../../../../../styles/colors";
+
+.cardWrap {
+	display: flex;
+	flex-direction: column;
+	padding: 24px 32px;
+	border-radius: 10px;
+	background-color: $white;
+	gap: 16px;
+
+	.title {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		color: $secondary-500;
+		font-weight: 600;
+
+		.icon {
+			display: flex;
+			align-items: center;
+      justify-content: center;
+			width: 16px;
+			height: 16px;
+			border-radius: 100%;
+			background-color: rgba($primary-500, 0.3);
+
+			div:nth-child(1) {
+				width: 8px;
+				height: 8px;
+				background-color: $primary-500;
+				border-radius: 100%;
+			}
+		}
+	}
+
+	.inputs {
+		display: flex;
+		gap: 50px;
+	}
+}

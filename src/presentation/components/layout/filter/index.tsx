@@ -5,9 +5,9 @@ import styles from './styles.module.scss';
 const Filter: React.FC = () => {
 	return (
 		<div className={styles.filterWrap}>
-			<FilterCard />
+			<FilterCard title="Pick-Up" />
 			<FilterIcon />
-			<FilterCard />                                                                
+			<FilterCard title="Drop-Off" />
 		</div>
 	);
 };
