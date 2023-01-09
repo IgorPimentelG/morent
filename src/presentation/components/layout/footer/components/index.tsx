@@ -22,6 +22,6 @@ const Links: React.FC<Props> = ({ title, options }) => {
 			</div>
 		</div>
 	);
-}
+};
 
-export { Links }
+export { Links };
