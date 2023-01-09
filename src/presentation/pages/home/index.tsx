@@ -8,6 +8,9 @@ const Home: React.FC = () => {
 		<div>
 			<Header />
 			<main className={styles.content}>
+				<section className={styles.ad}>
+
+				</section>
 				<Filter />
 			</main>
 			<Footer />

@@ -1,0 +1,52 @@
+@import "../../../styles/colors";
+
+.cardWrap {
+	display: flex;
+  flex-direction: column;
+
+	div:nth-child(1) {
+		display: flex;
+		gap: 16px;
+		flex-direction: column;
+		border-radius: 10px;
+		padding: 24px;
+		width: 55%;
+		color: $white;
+
+		.title {
+			font-size: 32px;
+			font-weight: 600;
+		}
+
+		.description {
+			font-weight: lighter;
+			line-height: 23px;
+		}
+
+		button {
+			width: fit-content;
+		}
+	}
+
+	&[data-variant="PRIMARY"] {
+		background-color: $information-500;
+		background-image: url("../../../assets/spiral-bg.png");
+	}
+
+	&[data-variant="SECONDARY"] {
+		background-color: $primary-500;
+		background-image: url("../../../assets/arrows-bg.png");
+
+		button {
+			background-color: $information-500 !important;
+		}
+	}
+
+	.imageWrap {
+		display: flex;
+		margin-top: 8px;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+}
