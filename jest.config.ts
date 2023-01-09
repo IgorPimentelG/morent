@@ -1,15 +1,25 @@
 export default {
-	roots: ["<rootDir>/src"],
-  clearMocks: true,
+	roots: ['<rootDir>/src'],
   collectCoverage: true,
   coverageDirectory: "coverage",
-	coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
-  coverageProvider: "v8",
-	moduleFileExtensions: ["ts", "tsx"],
-  testEnvironment: "jsdom",
-  testMatch: [
-    "<rootDir>/src/**/*.{ts,tsx}",
-    "**/?(*.)+(spec|test).[tj]s?(x)"
+	collectCoverageFrom: [
+    '<rootDir>/src/**/*.{ts,tsx}',
+    '!<rootDir>/src/**/index.ts',
+    '!<rootDir>/src/**/*.stories.tsx',
+    '!<rootDir>/src/main/**/*',
+    '!**/*.d.ts'
   ],
-  testPathIgnorePatterns: ["\\\\node_modules\\\\", "<rootDir>/src/**/index.{ts,tsx}",],
+  testEnvironment: "jsdom",
+	setupFilesAfterEnv: ["<rootDir>/src/main/config/jest/jest.setup.ts"],
+	transform: {
+    '.+\\.(ts|tsx)': 'ts-jest'
+  },
+	moduleNameMapper: {
+    '@data/(.*)': '<rootDir>/src/data/$1',
+		'@domain/(.*)': '<rootDir>/src/domain/$1',
+		'@infra/(.*)': '<rootDir>/src/infra/$1',
+		'@main/(.*)': '<rootDir>/src/main/$1',
+		'@presentation/(.*)': '<rootDir>/src/presentation/$1',
+    '\\.(scss)$': 'identity-obj-proxy'
+  }
 };

@@ -1,11 +1,13 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+				"jest/globals": true
     },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
+				"plugin:jest/recommended",
         "plugin:@typescript-eslint/recommended"
     ],
     "overrides": [
@@ -17,7 +19,8 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+				"jest"
     ],
     "rules": {
         "indent": [
@@ -41,6 +44,7 @@
 						"always"
 				],
 				"@typescript-eslint/no-empty-function": "off",
-				"@typescript-eslint/no-non-null-assertion": "off"
+				"@typescript-eslint/no-non-null-assertion": "off",
+				"@@typescript-eslint/no-explicit-any": "off"
     }
 }
