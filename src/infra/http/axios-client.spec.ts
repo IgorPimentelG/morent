@@ -31,7 +31,7 @@ describe('AxiosClient', () => {
 		});
 	});
 
-	test('Should return response successfully', async () => {
+	test('Should returns response successfully', async () => {
 		const { sut, mockedAxios } = makeSut();
 		const response = await sut.request(mockHttpRequest());
 		const httpResponse = await mockedAxios.request.mock.results[0].value;
@@ -41,7 +41,7 @@ describe('AxiosClient', () => {
 		});
 	});
 
-	test('Should return an error when the request fails', async () => {
+	test('Should returns an error when the request fails', async () => {
 		const { sut, mockedAxios } = makeSut();
 		const httpError = {
 			message: faker.random.words(),
@@ -50,8 +50,21 @@ describe('AxiosClient', () => {
 		mockedAxios.request.mockRejectedValueOnce(httpError);
 		const httpResponse = await sut.request(mockHttpRequest());
 		expect(httpResponse).toEqual({
-			message: httpError.message,
+			body: httpError.message,
 			statusCode: httpError.status
+		});
+	});
+
+	test('Should returns status 500 when axios has no status', async () => {
+		const { sut, mockedAxios } = makeSut();
+		const httpError = {
+			message: faker.random.words(),
+		};
+		mockedAxios.request.mockRejectedValueOnce(httpError);
+		const httpResponse = await sut.request(mockHttpRequest());
+		expect(httpResponse).toEqual({
+			body: httpError.message,
+			statusCode: 500
 		});
 	});
 });

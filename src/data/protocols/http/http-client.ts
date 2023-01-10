@@ -1,9 +1,9 @@
 import { HttpStatus } from './http-status';
 
-type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
 
 export interface HttpClient<T = any> {
-	request: (params: HttpRequest) => Promise<HttpResponse<T> | HttpError>;
+	request: (params: HttpRequest) => Promise<HttpResponse<T>>;
 }
 
 export interface HttpRequest {
@@ -15,10 +15,5 @@ export interface HttpRequest {
 
 export interface HttpResponse<T = any> {
 	body?: T;
-	statusCode: HttpStatus;
-}
-
-export interface HttpError {
-	message: string;
-  statusCode?: HttpStatus | number;
+	statusCode: HttpStatus | number;
 }
