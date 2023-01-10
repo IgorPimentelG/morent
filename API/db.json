@@ -1,0 +1,25 @@
+{
+	"ads": [
+		{
+			"id": "d860cfde-9266-49dd-b84c-7dc1edb48978",
+			"title": "The Best Platform for Car Rental",
+			"description": "Ease of doing a car rental safely and reliably. Of course at a low price.",
+			"image": "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673361431/MORENT/image_7_1_da9ggu.png",
+			"date": {
+				"start": "2023-01-01T00:00:00",
+				"end": "2023-02-01T00:00:00"
+			}
+		},
+		{
+			"id": "8c2a9782-0bfc-48b5-a517-88110e1f53ef",
+			"title": "Easy way to rent a car at a low price",
+			"description": "Providing cheap car rental services and safe and comfortable facilities.",
+			"image": "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673361433/MORENT/image_8_r9dqk6.png",
+			"date": {
+				"start": "2023-01-01T00:00:00",
+				"end": "2023-02-01T00:00:00"
+			}
+		}
+	]
+}
+
