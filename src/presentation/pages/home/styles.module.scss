@@ -1,7 +1,10 @@
+@import "../../styles/colors";
+
 .content {
 	position: relative;
 	margin-top: 60px;
 	padding: 50px;
+	gap: 24px;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -13,5 +16,23 @@
 		width: 100%;
 		gap: 32px;
 		margin-bottom: 24px;
+	}
+
+	.popularCarWrap,
+	.recomendationCarWrap {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.sectionTitle {
+		display: flex;
+		flex: 1;
+		justify-content: space-between;
+		
+		span {
+			font-weight: 700;
+			color: $secondary-300;
+		}
 	}
 }

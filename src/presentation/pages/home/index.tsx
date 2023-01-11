@@ -5,6 +5,7 @@ import { LoadAdvertising } from '@domain/usecases';
 import { AdvertisingModel } from '@domain/models';
 import { Header, Footer, Filter, CardAdvertising } from '@presentation/components/layout';
 import { SkeletonAdvertising } from '@presentation/components/skeleton';
+import { Link } from '@presentation/components/ui';
 
 type Props = {
 	loadAdvertisements: LoadAdvertising;
@@ -57,7 +58,21 @@ const Home: React.FC<Props> = ({ loadAdvertisements }) => {
 						</>
 					)}
 				</section>
+
 				<Filter />
+				
+				<section className={styles.popularCarWrap}>
+					<div className={styles.sectionTitle}>
+						<span>Popular Car</span>
+						<Link to='#' label='View All'/>
+					</div> 
+				</section>
+
+				<section className={styles.recomendationCarWrap}>
+					<div className={styles.sectionTitle}>
+						<span>Recomendation Car</span>
+					</div> 
+				</section>
 			</main>
 			<Footer />
 		</div>
