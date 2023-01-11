@@ -8,10 +8,11 @@
     "preview": "vite preview",
     "test": "jest --passWithNoTests --no-cache --runInBand",
     "test:watch": "npm run test -- --watch",
+    "test:file": "npm run test:watch --findRelatedTests",
     "test:ci": "npm run test -- --coverage",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-		"api": "json-server ./API/db.json --routes ./API/routes.json --port 5050 --watch"
+    "api": "json-server ./API/db.json --routes ./API/routes.json --port 5050 --watch"
   },
   "dependencies": {
     "axios": "^1.2.2",
