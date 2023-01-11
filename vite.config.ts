@@ -4,7 +4,7 @@ import path from 'node:path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+	plugins: [react()],
 	mode: 'development',
 	resolve: {
 		alias: {
@@ -15,4 +15,4 @@ export default defineConfig({
 			'@presentation': path.resolve(__dirname, './src/presentation'),
 		}
 	}
-})
+});

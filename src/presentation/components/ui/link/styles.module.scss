@@ -1,0 +1,12 @@
+@import "../../../styles/colors";
+
+.link {
+	color: $primary-500;
+	font-weight: 550;
+	text-transform: capitalize;
+	transition: all 500ms ease;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
