@@ -12,7 +12,9 @@
     "test:ci": "npm run test -- --coverage",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "api": "json-server ./API/db.json --routes ./API/routes.json --port 5050 --watch"
+    "api": "json-server ./API/db.json --routes ./API/routes.json --port 5050 --watch",
+    "prepare": "husky install",
+		"fixer": "eslint --fix --ext .ts ."
   },
   "dependencies": {
     "axios": "^1.2.2",
@@ -56,9 +58,11 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-storybook": "^0.6.8",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest-environment-jsdom": "^29.3.1",
     "json-server": "^0.17.1",
+    "lint-staged": "^13.1.0",
     "sass-loader": "^13.2.0",
     "storybook-addon-pseudo-states": "^1.15.2",
     "storybook-addon-sass-postcss": "^0.1.3",
