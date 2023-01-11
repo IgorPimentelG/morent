@@ -20,6 +20,97 @@
 				"end": "2023-02-01T00:00:00"
 			}
 		}
-	]
+	],
+	"popularCars": [
+		{
+			"id": "5ab8e328-4ead-49b2-a3d1-1ef8205d12ee",
+			"model": "Koenigsegg",
+			"type": "Sport",
+			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+			"capacity": 2,
+			"autonomy": 90,
+			"transmission": "Manual",
+			"price": 99.00,
+			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/car_3_fr8m8i.png"],
+			"availability": {
+				"locations": ["New York", "London"],
+				"date": {
+					"start": "2023-01-01T00:00:00",
+					"end": "2023-02-01T00:00:00"
+				},
+				"time": {
+					"start": "2023-01-01T10:00:00",
+					"end": "2023-02-01T10:00:00"
+				}
+			}
+		},
+		{
+			"id": "1e50eaab-cf92-4444-b073-4832bd7d63ae",
+			"model": "Nissan GT - R",
+			"type": "Sport",
+			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+			"capacity": 2,
+			"autonomy": 80,
+			"transmission": "Manual",
+			"price": 80.00,
+			"oldPrice": 100.00,
+			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/car_2_zprjwe.png"],
+			"availability": {
+				"locations": ["New York", "London"],
+				"date": {
+					"start": "2023-01-01T00:00:00",
+					"end": "2023-02-01T00:00:00"
+				},
+				"time": {
+					"start": "2023-01-01T10:00:00",
+					"end": "2023-02-01T10:00:00"
+				}
+			}
+		},
+		{
+			"id": "42506a68-9649-4a93-8f2b-54c335e03f47",
+			"model": "Rolls - Royce",
+			"type": "Sedan",
+			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+			"capacity": 4,
+			"autonomy": 70,
+			"transmission": "Manual",
+			"price": 96.00,
+			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/Car_4_caobcb.png"], 
+			"availability": {
+				"locations": ["New York", "London"],
+				"date": {
+					"start": "2023-01-01T00:00:00",
+					"end": "2023-02-01T00:00:00"
+				},
+				"time": {
+					"start": "2023-01-01T10:00:00",
+					"end": "2023-02-01T10:00:00"
+				}
+			}
+		},
+		{
+			"id": "dbaede00-769f-451c-a601-56687f0dc90c",
+			"model": "Nissan GT - R",
+			"type": "Sport",
+			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+			"capacity": 2,
+			"autonomy": 80,
+			"transmission": "Manual",
+			"price": 80.00,
+			"oldPrice": 100.00,
+			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/Car_5_ugs5gu.png"],
+			"availability": { 
+				"locations": ["New York", "London"],
+				"date": {
+					"start": "2023-01-01T00:00:00",
+					"end": "2023-02-01T00:00:00"
+				},
+				"time": {
+					"start": "2023-01-01T10:00:00",
+					"end": "2023-02-01T10:00:00"
+				}
+			}
+		}
+	]         
 }
-
