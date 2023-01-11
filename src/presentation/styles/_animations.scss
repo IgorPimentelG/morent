@@ -1,5 +1,11 @@
-@keyframes shimmer {
+@import "colors";
+
+@keyframes skeleton-loading {
+	0% {
+		background-color: rgba($secondary-100, 0.5);
+	}
+
 	100% {
-		transform: translateX(100%);
+		background-color: $secondary-100;
 	}
 }

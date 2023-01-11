@@ -7,8 +7,17 @@ type Props = {
 
 const SkeletonAdvertising: React.FC<Props> = ({ variant = 'PRIMARY' }) => {
 	return (
-		<div className={styles.cardWrap} data-variant={variant}>
-			<div className={styles.skeleton}/>
+		<div className={styles.skeletonWrap} data-variant={variant}>
+			<section>
+				<div className={styles.title1} />
+				<div className={styles.title2} />
+				<div className={styles.description1} />
+				<div className={styles.description2} />
+				<div className={`${styles.button} ${styles.space}`} />
+			</section>
+			<section>
+				<div className={styles.image} />
+			</section>
 		</div>
 	);
 };

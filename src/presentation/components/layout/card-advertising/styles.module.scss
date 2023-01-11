@@ -12,6 +12,7 @@
 		flex-direction: column;
 		border-radius: 10px;
 		padding: 24px;
+		width: 55%;
 		color: $white;
 
 		.title {
@@ -45,7 +46,7 @@
 
 	.imageWrap {
 		display: flex;
-		margin-top: 8px;
+		margin-top: -8px;
 		width: 100%;
 		justify-content: center;
 		align-items: center;
