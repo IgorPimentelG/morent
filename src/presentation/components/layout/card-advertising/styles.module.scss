@@ -5,6 +5,7 @@
   flex-direction: column;
 	border-radius: 10px;
 	flex-grow: 1;
+	transition: all 500ms ease;
 
 	div:nth-child(1) {
 		display: flex;
@@ -42,6 +43,10 @@
 		button {
 			background-color: $information-500 !important;
 		}
+	}
+
+	&:hover {
+		transform: scale(1.01);
 	}
 
 	.imageWrap {

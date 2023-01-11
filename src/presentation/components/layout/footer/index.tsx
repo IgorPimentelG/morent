@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
 	];
 
 	return (
-		<footer className={styles.footerWrap}>
+		<footer className={styles.footerWrap} data-testid="footer">
 			<section className={styles.header}>
 				<div>
 					<Logo />
@@ -62,6 +62,6 @@ const Footer: React.FC = () => {
 			</section>
 		</footer>
 	);
-}
+};
 
 export { Footer };

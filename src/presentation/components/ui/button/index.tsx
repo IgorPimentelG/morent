@@ -17,6 +17,7 @@ const Button: React.FC<Props> = ({ label, styleType, disabled = false, action })
 			onClick={action}
 			disabled={disabled}
 			data-type={styleType}
+			data-testid="button"
 		>
 			<span>{label}</span>
 		</button>

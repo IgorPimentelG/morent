@@ -6,7 +6,7 @@ import { Logo, IconButton, IconProfile, InputFilter } from '@presentation/compon
 
 const Header: React.FC = () => {
 	return (
-		<header className={styles.headerWrap}>
+		<header className={styles.headerWrap} data-testid="header">
 			<div className={styles.filter}>
 				<Logo />
 				<InputFilter

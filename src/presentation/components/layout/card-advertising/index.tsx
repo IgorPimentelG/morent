@@ -12,12 +12,16 @@ type Props = {
 
 const CardAdvertising: React.FC<Props> = ({ advertising, variant = 'PRIMARY', action }) => {
 	return (
-		<div className={styles.cardWrap} data-variant={variant}>
+		<div
+			data-testid="card-advertising"
+			className={styles.cardWrap}
+			data-variant={variant}
+		>
 			<div>
-				<span className={styles.title}>
+				<span className={styles.title} data-testid="title">
 					{advertising.title}
 				</span>
-				<span className={styles.description}>
+				<span className={styles.description} data-testid="description">
 					{advertising.description}
 				</span>
 				{action && (
@@ -25,7 +29,7 @@ const CardAdvertising: React.FC<Props> = ({ advertising, variant = 'PRIMARY', ac
 				)}
 			</div>
 			<div className={styles.imageWrap}>
-				<img src={advertising.image} />
+				<img src={advertising.image} data-testid="image" />
 			</div>
 		</div>
 	);

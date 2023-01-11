@@ -7,7 +7,12 @@ class RemoteLoadAdvertisementsSpy implements LoadAdvertising {
 
 	async load (): Promise<AdvertisingModel[]> {
 		this.callsCount++;
-		return mockAdvertising();
+		
+		return new Promise(() => {
+			setTimeout(() => {
+				return mockAdvertising();
+			}, 5000);
+		});
 	}
 }
 

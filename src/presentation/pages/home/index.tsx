@@ -30,7 +30,7 @@ const Home: React.FC<Props> = ({ loadAdvertisements }) => {
 			.then((response) => {
 				setAdvertisements({ isLoading: false, hasError: false, data: response });
 			}).catch(() => {
-				setAdvertisements({ isLoading: true, hasError: true, data: [] });
+				setAdvertisements({ isLoading: false, hasError: true, data: [] });
 			});
 	}, []);
 
