@@ -1,0 +1,69 @@
+@import "../../../styles/colors";
+@import "../../../styles/animations";
+
+$sizes:
+	"model" 25px 150px,
+	"type" 25px 100px,
+	"favorite" 15px 15px,
+	"image" 100px 100%,
+	"autonomy" 20px 70px,
+	"transmission" 20px 70px,
+	"capacity" 20px 70px,
+	"price" 25px 85px,
+	"button" 40px 90px;
+
+.skeletonWrap {
+	display: flex;
+  flex-direction: column;
+	width: fit-content;
+	border-radius: 10px;
+	padding: 15px;
+	background-color: $white;
+	gap: 16px;
+
+	span {
+		border-radius: 5px;
+		background-color: $secondary-100;
+		animation: skeleton-loading 1s linear infinite alternate;
+	}
+
+	section {
+		display: flex;
+	}
+
+	section:nth-child(1) {
+		justify-content: space-between;
+
+		div {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.favorite {
+			border-radius: 100%;
+		}
+	}
+
+	section:nth-child(3) {
+		justify-content: space-between;
+		gap: 8px;
+	}
+
+	section:nth-child(4) {
+		justify-content: space-between;
+		align-items: center;
+
+		div {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	@each $element, $h, $w in $sizes {
+		.#{$element} {
+			height: $h;
+			width: $w;
+			margin: 4px 0;
+		}
+	}
+}

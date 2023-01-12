@@ -7,7 +7,7 @@ type Props = {
 }
 
 export default {
-	title: 'Components/Skeletons/Card/Advertising',
+	title: 'Components/Skeletons/card-advertising',
 	component: SkeletonAdvertising,
 	argTypes: {
 		variant: {
