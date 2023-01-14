@@ -63,13 +63,12 @@ describe('Home Page', () => {
 			const advertisements = screen.queryAllByTestId('card-advertising');
 			expect(advertisements).toHaveLength(0);
 		});
-	});	
+	});
 
 	test('Should call LoadAdivertising only once', async () => {
 		const { remoteLoadAdivertisementsSpy } = await makeSut();
 		waitFor(() => {
 			expect(remoteLoadAdivertisementsSpy.callsCount).toBe(1);
 		});
-	});	
+	});
 });
- 
