@@ -60,18 +60,18 @@ const Home: React.FC<Props> = ({ loadAdvertisements }) => {
 				</section>
 
 				<Filter />
-				
+
 				<section className={styles.popularCarWrap}>
 					<div className={styles.sectionTitle}>
 						<span>Popular Car</span>
 						<Link to='#' label='View All'/>
-					</div> 
+					</div>
 				</section>
 
 				<section className={styles.recomendationCarWrap}>
 					<div className={styles.sectionTitle}>
 						<span>Recomendation Car</span>
-					</div> 
+					</div>
 				</section>
 			</main>
 			<Footer />

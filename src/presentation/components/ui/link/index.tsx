@@ -9,7 +9,9 @@ type Props = {
 const Link: React.FC<Props> = ({ label, to }) => {
 	return (
 		<>
-			<a className={styles.link} href={to}>{label}</a>
+			<a className={styles.link} href={to}>
+				{label}
+			</a>
 		</>
 	);
 };
