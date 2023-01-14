@@ -10,7 +10,10 @@ export class RemoteLoadCars implements LoadCards {
 	) {}
 
 	async loadPopularCars (): Promise<CarModel[]> {
-		const httpResponse = await this.httpClient.request({ url: this.url, method: 'GET' });
+		const httpResponse = await this.httpClient.request({
+			url: `${this.url}?type=popular`,
+			method: 'GET'
+		});
 
 		switch (httpResponse.statusCode) {
 		case HttpStatus.noContent: return [];
@@ -20,6 +23,15 @@ export class RemoteLoadCars implements LoadCards {
 	}
 
 	async loadRecomendationCars (): Promise<CarModel[]> {
-		return [];
+		const httpResponse = await this.httpClient.request({
+			url: `${this.url}?type=recomendation`,
+			method: 'GET'
+		});
+
+		switch (httpResponse.statusCode) {
+		case HttpStatus.noContent: return [];
+		case HttpStatus.ok: return httpResponse.body!;
+		default: throw new ServerError();
+		}
 	}
 }
