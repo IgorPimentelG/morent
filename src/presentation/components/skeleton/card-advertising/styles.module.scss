@@ -29,7 +29,7 @@ $sizes:
 	div {
 		border-radius: 5px;
 		background-color: $secondary-100;
-		animation: skeleton-loading 1s linear infinite alternate;
+		animation: skeleton-loading 500ms linear infinite alternate;
 	}
 
 	section:nth-child(2) {

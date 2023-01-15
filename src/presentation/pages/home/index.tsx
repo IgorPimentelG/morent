@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import { LoadAdvertising } from '@domain/usecases';
 import { AdvertisingModel } from '@domain/models';
 import { Header, Footer, Filter, CardAdvertising } from '@presentation/components/layout';
-import { SkeletonAdvertising } from '@presentation/components/skeleton';
+import { SkeletonAdvertising, SkeletonCar } from '@presentation/components/skeleton';
 import { Link } from '@presentation/components/ui';
 
 type Props = {
@@ -66,11 +66,25 @@ const Home: React.FC<Props> = ({ loadAdvertisements }) => {
 						<span>Popular Car</span>
 						<Link to='#' label='View All'/>
 					</div>
+					<div className={styles.list}>
+						{Array.from(Array(4), () => (
+							<>
+								<SkeletonCar />
+							</>
+						))}
+					</div>
 				</section>
 
 				<section className={styles.recomendationCarWrap}>
 					<div className={styles.sectionTitle}>
 						<span>Recomendation Car</span>
+					</div>
+					<div className={styles.list}>
+						{Array.from(Array(4), () => (
+							<>
+								<SkeletonCar />
+							</>
+						))}
 					</div>
 				</section>
 			</main>

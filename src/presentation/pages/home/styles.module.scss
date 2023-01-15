@@ -29,10 +29,17 @@
 		display: flex;
 		flex: 1;
 		justify-content: space-between;
-		
+		margin-bottom: 24px;
+
 		span {
 			font-weight: 700;
 			color: $secondary-300;
 		}
+	}
+
+	.list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 48px;
 	}
 }
