@@ -38,6 +38,12 @@ describe('Home Page', () => {
 		expect(skeletons[1]).toHaveAttribute('data-variant', 'SECONDARY');
 	});
 
+	test('Should show skeleton when loading cars', async () => {
+		await makeSut();
+		const skeletons = screen.queryAllByTestId('skeleton-car');
+		expect(skeletons).toHaveLength(8);
+	});
+
 	test('Should show advertisements successfully', async () => {
 		await makeSut();
 		waitFor(() => {
