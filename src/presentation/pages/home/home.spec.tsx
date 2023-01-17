@@ -3,23 +3,34 @@ import { BrowserRouter } from 'react-router-dom';
 import { render, screen, act, within, waitFor } from '@testing-library/react';
 
 import { Home } from '@presentation/pages';
-import { RemoteLoadAdvertisementsSpy } from '@presentation/test';
+import { RemoteLoadAdvertisementsSpy, RemoteLoadCarsSpy } from '@presentation/test';
 
 type SutTypes = {
-	remoteLoadAdivertisementsSpy: RemoteLoadAdvertisementsSpy
+	remoteLoadAdivertisementsSpy: RemoteLoadAdvertisementsSpy;
+	remoteLoadCarsSpy: RemoteLoadCarsSpy;
 }
 
-const makeSut = async (
-	remoteLoadAdivertisementsSpy = new RemoteLoadAdvertisementsSpy()
-): Promise<SutTypes> => {
+type SutParams = {
+	remoteLoadAdivertisementsSpy?: RemoteLoadAdvertisementsSpy;
+	remoteLoadCarsSpy?: RemoteLoadCarsSpy;
+}
+
+const makeSut = async ({
+	remoteLoadAdivertisementsSpy = new RemoteLoadAdvertisementsSpy(),
+	remoteLoadCarsSpy = new RemoteLoadCarsSpy()
+}: SutParams = {}): Promise<SutTypes> => {
 	await act(async () => render(
 		<BrowserRouter>
-			<Home loadAdvertisements={remoteLoadAdivertisementsSpy} />
+			<Home
+				loadAdvertisements={remoteLoadAdivertisementsSpy}
+				loadCars={remoteLoadCarsSpy}
+			/>
 		</BrowserRouter>
 	));
 
 	return {
-		remoteLoadAdivertisementsSpy
+		remoteLoadAdivertisementsSpy,
+		remoteLoadCarsSpy
 	};
 };
 
@@ -64,7 +75,7 @@ describe('Home Page', () => {
 	test('Should not show advertisements when there are none', async () => {
 		const remoteLoadAdivertisementsSpy = new RemoteLoadAdvertisementsSpy();
 		jest.spyOn(remoteLoadAdivertisementsSpy, 'load').mockResolvedValue([]);
-		await makeSut(remoteLoadAdivertisementsSpy);
+		await makeSut({ remoteLoadAdivertisementsSpy });
 		waitFor(() => {
 			const advertisements = screen.queryAllByTestId('card-advertising');
 			expect(advertisements).toHaveLength(0);
@@ -75,6 +86,29 @@ describe('Home Page', () => {
 		const { remoteLoadAdivertisementsSpy } = await makeSut();
 		waitFor(() => {
 			expect(remoteLoadAdivertisementsSpy.callsCount).toBe(1);
+		});
+	});
+
+	test('Should show popular cars successfully', async () => {
+		await makeSut();
+		waitFor(() => {
+			const cars = screen.queryAllByTestId('card-car');
+			expect(within(cars[0]).getByTestId('model')).toBe('Koenigsegg');
+			expect(within(cars[0]).getByTestId('type')).toBe('Sport');
+			expect(within(cars[0]).getByTestId('image')).toBeInTheDocument();
+			expect(within(cars[0]).getByTestId('autonomy')).toContain('90L');
+			expect(within(cars[0]).getByTestId('transmission')).toContain('Manual');
+			expect(within(cars[0]).getByTestId('capacity')).toContain('2 People');
+			expect(within(cars[0]).getByTestId('price')).toBe('$99.00/day');
+
+			expect(within(cars[1]).getByTestId('model')).toBe('Nissan GT-R');
+			expect(within(cars[1]).getByTestId('type')).toBe('Sport');
+			expect(within(cars[1]).getByTestId('image')).toBeInTheDocument();
+			expect(within(cars[1]).getByTestId('autonomy')).toContain('80L');
+			expect(within(cars[1]).getByTestId('transmission')).toContain('Manual');
+			expect(within(cars[1]).getByTestId('capacity')).toContain('2 People');
+			expect(within(cars[1]).getByTestId('price')).toBe('$80.00/day');
+			expect(within(cars[1]).getByTestId('old-price')).toBe('$100.00');
 		});
 	});
 });
