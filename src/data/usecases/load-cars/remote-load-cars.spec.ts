@@ -33,7 +33,7 @@ describe('RemoteLoadCars', () => {
 			const url = faker.internet.url();
 			const { remoteLoadCars, httpClientSpy } = makeSut({ url });
 			await remoteLoadCars.loadPopularCars();
-			expect(httpClientSpy.url).toBe(`${url}?type=popular`);
+			expect(httpClientSpy.url).toBe(`${url}?category=popular`);
 			expect(httpClientSpy.method).toBe('GET');
 		});
 
@@ -75,7 +75,7 @@ describe('RemoteLoadCars', () => {
 			const url = faker.internet.url();
 			const { remoteLoadCars, httpClientSpy } = makeSut({ url });
 			await remoteLoadCars.loadRecomendationCars();
-			expect(httpClientSpy.url).toBe(`${url}?type=recomendation`);
+			expect(httpClientSpy.url).toBe(`${url}?category=recomendation`);
 			expect(httpClientSpy.method).toBe('GET');
 		});
 

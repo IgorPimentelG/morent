@@ -1,9 +1,9 @@
 import { ServerError } from '@data/errors';
 import { HttpClient, HttpStatus } from '@data/protocols';
 import { CarModel } from '@domain/models';
-import { LoadCards } from '@domain/usecases';
+import { LoadCars } from '@domain/usecases';
 
-export class RemoteLoadCars implements LoadCards {
+export class RemoteLoadCars implements LoadCars {
 	constructor(
 		private url: string,
 		private httpClient: HttpClient<CarModel[]>
@@ -11,7 +11,7 @@ export class RemoteLoadCars implements LoadCards {
 
 	async loadPopularCars (): Promise<CarModel[]> {
 		const httpResponse = await this.httpClient.request({
-			url: `${this.url}?type=popular`,
+			url: `${this.url}?category=popular`,
 			method: 'GET'
 		});
 
@@ -24,7 +24,7 @@ export class RemoteLoadCars implements LoadCards {
 
 	async loadRecomendationCars (): Promise<CarModel[]> {
 		const httpResponse = await this.httpClient.request({
-			url: `${this.url}?type=recomendation`,
+			url: `${this.url}?category=recomendation`,
 			method: 'GET'
 		});
 
