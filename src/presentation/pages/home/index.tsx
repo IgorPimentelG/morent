@@ -1,38 +1,64 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 
 import styles from './styles.module.scss';
-import { LoadAdvertising } from '@domain/usecases';
-import { AdvertisingModel } from '@domain/models';
-import { Header, Footer, Filter, CardAdvertising } from '@presentation/components/layout';
+import { LoadAdvertising, LoadCars } from '@domain/usecases';
+import { Header, Footer, Filter, CardAdvertising, CardCar } from '@presentation/components/layout';
 import { SkeletonAdvertising, SkeletonCar } from '@presentation/components/skeleton';
-import { Link } from '@presentation/components/ui';
+import { Button, Link } from '@presentation/components/ui';
+import { AdvertisingContext, CarContext } from '@presentation/context';
 
 type Props = {
 	loadAdvertisements: LoadAdvertising;
+	loadCars: LoadCars;
 }
 
-type AdvertisementsState = {
+type DataParams<T> = {
 	isLoading: boolean;
 	hasError: boolean;
-	data: AdvertisingModel[];
+	data: T[];
 }
 
-const Home: React.FC<Props> = ({ loadAdvertisements }) => {
+const Home: React.FC<Props> = ({ loadAdvertisements, loadCars }) => {
 
-	const [advertisements, setAdvertisements] = useState<AdvertisementsState>({
-		isLoading: false,
-		hasError: false,
-		data: []
-	});
+	const carContext = useContext(CarContext);
+	const advertisingContext = useContext(AdvertisingContext);
 
 	useEffect(() => {
-		setAdvertisements((old) => ({...old, isLoading: true}));
+		const { setAdvertisements, setIsLoading } = advertisingContext;
+		setIsLoading(true);
 		loadAdvertisements.load()
 			.then((response) => {
-				setAdvertisements({ isLoading: false, hasError: false, data: response });
+				setAdvertisements(response);
 			}).catch(() => {
-				setAdvertisements({ isLoading: false, hasError: true, data: [] });
+				setAdvertisements([]);
 			});
+		setIsLoading(false);
+	}, []);
+
+	// Load Popular Cars
+	useEffect(() => {
+		const { setPopular, setPopularCarsIsLoading } = carContext;
+		setPopularCarsIsLoading(true);
+		loadCars.loadPopularCars()
+			.then((response) => {
+				setPopular(response);
+			}).catch(() => {
+				setPopular([]);
+			});
+		setPopularCarsIsLoading(false);
+	}, []);
+
+	// Load Recomendation Cars
+	useEffect(() => {
+		const { setRecomendation, setRecomendationCarsIsLoading } = carContext;
+		setRecomendationCarsIsLoading(true);
+		loadCars.loadRecomendationCars()
+			.then((response) => {
+				setRecomendation(response);
+			}).catch(() => {
+				setRecomendation([]);
+			});
+		setRecomendationCarsIsLoading(false);
 	}, []);
 
 	return (
@@ -40,14 +66,14 @@ const Home: React.FC<Props> = ({ loadAdvertisements }) => {
 			<Header />
 			<main className={styles.content}>
 				<section className={styles.ad}>
-					{advertisements.isLoading ? (
+					{advertisingContext.isLoading ? (
 						<>
 							<SkeletonAdvertising variant='PRIMARY' />
 							<SkeletonAdvertising variant='SECONDARY' />
 						</>
 					) : (
 						<>
-							{advertisements.data.map((item, index) => (
+							{advertisingContext.advertisements.map((item, index) => (
 								<CardAdvertising
 									key={index}
 									advertising={item}
@@ -67,11 +93,26 @@ const Home: React.FC<Props> = ({ loadAdvertisements }) => {
 						<Link to='#' label='View All'/>
 					</div>
 					<div className={styles.list}>
-						{Array.from(Array(4), () => (
+						{carContext.popularCarsIsLoading ? (
 							<>
-								<SkeletonCar />
+								{Array.from(Array(4), () => (
+									<>
+										<SkeletonCar />
+									</>
+								))}
 							</>
-						))}
+						) : (
+							<>
+								{carContext.popular.map((item) => (
+									<CardCar
+										key={item.id}
+										car={item}
+										onFavorite={() => {}}
+										onRent={() => {}}
+									/>
+								))}
+							</>
+						)}
 					</div>
 				</section>
 
@@ -80,11 +121,31 @@ const Home: React.FC<Props> = ({ loadAdvertisements }) => {
 						<span>Recomendation Car</span>
 					</div>
 					<div className={styles.list}>
-						{Array.from(Array(4), () => (
+						{carContext.recomendationCarsIsLoading ? (
 							<>
-								<SkeletonCar />
+								{Array.from(Array(4), () => (
+									<>
+										<SkeletonCar />
+									</>
+								))}
 							</>
-						))}
+						) : (
+							<>
+								{carContext.recomendation.map((item) => (
+									<CardCar
+										key={item.id}
+										car={item}
+										onFavorite={() => {}}
+										onRent={() => {}}
+									/>
+								))}
+							</>
+						)}
+					</div>
+					<div className={styles.loadMoreCarsWrap}>
+						<div />
+						<Button label='Show more car' action={() => {}} />
+						<span>0 Car</span>
 					</div>
 				</section>
 			</main>

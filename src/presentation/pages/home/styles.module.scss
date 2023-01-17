@@ -37,6 +37,21 @@
 		}
 	}
 
+	.recomendationCarWrap {
+		.loadMoreCarsWrap {
+			display: flex;
+			flex: 1;
+			margin-top: 48px;
+			align-items: center;
+			justify-content: space-between;
+
+			& > span {
+				font-size: 14px;
+				color: $secondary-300;
+			}
+		}
+	}
+
 	.list {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);

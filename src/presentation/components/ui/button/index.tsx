@@ -5,7 +5,7 @@ type StyleType = 'PRIMARY' | 'SECONDARY';
 
 type Props = {
 	label: string;
-	styleType: StyleType;
+	styleType?: StyleType;
 	disabled?: boolean;
 	action: () => void;
 }
@@ -16,7 +16,7 @@ const Button: React.FC<Props> = ({ label, styleType, disabled = false, action })
 			className={styles.buttonWrap}
 			onClick={action}
 			disabled={disabled}
-			data-type={styleType}
+			data-type={styleType || 'PRIMARY'}
 			data-testid="button"
 		>
 			<span>{label}</span>
