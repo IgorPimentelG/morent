@@ -1,9 +1,10 @@
 @import "../../styles/colors";
 
-.signInWrap {
+.signUpWrap {
 	display: flex;
 	width: 100%;
 	min-height: 100vh;
+	padding: 48px;
 	align-items: center;
 	justify-content: center;
 	background: linear-gradient(to top, #f6f6f6, #e8e7e5);
@@ -37,13 +38,6 @@
 					display: flex;
 					width: 100%;
 					justify-content: flex-start;
-				}
-
-				.recover {
-					display: flex;
-					width: 100%;
-					justify-content: flex-end;
-					font-size: 12px;
 				}
 			}
 
@@ -92,7 +86,7 @@
 
 		.imageWrap {
 			img {
-				width: 400px;
+				width: 500px;
 				height: 100%;
 				border-radius: 0 10px 10px 0;
 				object-fit: cover;
