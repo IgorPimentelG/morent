@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 
 import styles from './styles.module.scss';
 import { LoadAdvertising, LoadCars } from '@domain/usecases';
@@ -12,16 +12,11 @@ type Props = {
 	loadCars: LoadCars;
 }
 
-type DataParams<T> = {
-	isLoading: boolean;
-	hasError: boolean;
-	data: T[];
-}
-
 const Home: React.FC<Props> = ({ loadAdvertisements, loadCars }) => {
 
 	const carContext = useContext(CarContext);
 	const advertisingContext = useContext(AdvertisingContext);
+	const [totalCars, setTotalCars] = useState<number>(0);
 
 	useEffect(() => {
 		const { setAdvertisements, setIsLoading } = advertisingContext;
@@ -55,6 +50,7 @@ const Home: React.FC<Props> = ({ loadAdvertisements, loadCars }) => {
 		loadCars.loadRecomendationCars()
 			.then((response) => {
 				setRecomendation(response);
+				setTotalCars(response.length);
 			}).catch(() => {
 				setRecomendation([]);
 			});
@@ -92,7 +88,7 @@ const Home: React.FC<Props> = ({ loadAdvertisements, loadCars }) => {
 						<span>Popular Car</span>
 						<Link to='#' label='View All'/>
 					</div>
-					<div className={styles.list}>
+					<div className={styles.list} data-testid="popularCarsWrap">
 						{carContext.popularCarsIsLoading ? (
 							<>
 								{Array.from(Array(4), () => (
@@ -120,7 +116,7 @@ const Home: React.FC<Props> = ({ loadAdvertisements, loadCars }) => {
 					<div className={styles.sectionTitle}>
 						<span>Recomendation Car</span>
 					</div>
-					<div className={styles.list}>
+					<div className={styles.list} data-testId="recomendationCarsWrap">
 						{carContext.recomendationCarsIsLoading ? (
 							<>
 								{Array.from(Array(4), () => (
@@ -142,11 +138,13 @@ const Home: React.FC<Props> = ({ loadAdvertisements, loadCars }) => {
 							</>
 						)}
 					</div>
-					<div className={styles.loadMoreCarsWrap}>
-						<div />
-						<Button label='Show more car' action={() => {}} />
-						<span>0 Car</span>
-					</div>
+					{!carContext.popularCarsIsLoading && !carContext.recomendationCarsIsLoading && (
+						<div className={styles.loadMoreCarsWrap}>
+							<div />
+							<Button label='Show more car' action={() => {}} />
+							<span data-testid="total-cars">{`${totalCars} Car`}</span>
+						</div>
+					)}
 				</section>
 			</main>
 			<Footer />

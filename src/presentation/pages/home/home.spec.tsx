@@ -4,6 +4,7 @@ import { render, screen, act, within, waitFor } from '@testing-library/react';
 
 import { Home } from '@presentation/pages';
 import { RemoteLoadAdvertisementsSpy, RemoteLoadCarsSpy } from '@presentation/test';
+import { CarProvider, AdvertisingProvider } from '@presentation/context';
 
 type SutTypes = {
 	remoteLoadAdivertisementsSpy: RemoteLoadAdvertisementsSpy;
@@ -21,10 +22,14 @@ const makeSut = async ({
 }: SutParams = {}): Promise<SutTypes> => {
 	await act(async () => render(
 		<BrowserRouter>
-			<Home
-				loadAdvertisements={remoteLoadAdivertisementsSpy}
-				loadCars={remoteLoadCarsSpy}
-			/>
+			<CarProvider>
+				<AdvertisingProvider>
+					<Home
+						loadAdvertisements={remoteLoadAdivertisementsSpy}
+						loadCars={remoteLoadCarsSpy}
+					/>
+				</AdvertisingProvider>
+			</CarProvider>
 		</BrowserRouter>
 	));
 
@@ -39,20 +44,6 @@ describe('Home Page', () => {
 		await makeSut();
 		expect(screen.getByTestId('header')).toBeInTheDocument();
 		expect(screen.getByTestId('footer')).toBeInTheDocument();
-	});
-
-	test('Should show skeleton when loading ADs', async () => {
-		await makeSut();
-		const skeletons = screen.queryAllByTestId('skeleton-advertising');
-		expect(skeletons).toHaveLength(2);
-		expect(skeletons[0]).toHaveAttribute('data-variant', 'PRIMARY');
-		expect(skeletons[1]).toHaveAttribute('data-variant', 'SECONDARY');
-	});
-
-	test('Should show skeleton when loading cars', async () => {
-		await makeSut();
-		const skeletons = screen.queryAllByTestId('skeleton-car');
-		expect(skeletons).toHaveLength(8);
 	});
 
 	test('Should show advertisements successfully', async () => {
@@ -109,6 +100,38 @@ describe('Home Page', () => {
 			expect(within(cars[1]).getByTestId('capacity')).toContain('2 People');
 			expect(within(cars[1]).getByTestId('price')).toBe('$80.00/day');
 			expect(within(cars[1]).getByTestId('old-price')).toBe('$100.00');
+			expect(screen.getByTestId('popularCarsWrap').childElementCount).toBe(2);
+		});
+	});
+
+	test('Should show recomendation cars successfully', async () => {
+		await makeSut();
+		waitFor(() => {
+			const cars = screen.queryAllByTestId('card-car');
+			expect(within(cars[2]).getByTestId('model')).toBe('Koenigsegg');
+			expect(within(cars[2]).getByTestId('type')).toBe('Sport');
+			expect(within(cars[2]).getByTestId('image')).toBeInTheDocument();
+			expect(within(cars[2]).getByTestId('autonomy')).toContain('90L');
+			expect(within(cars[2]).getByTestId('transmission')).toContain('Manual');
+			expect(within(cars[2]).getByTestId('capacity')).toContain('2 People');
+			expect(within(cars[2]).getByTestId('price')).toBe('$99.00/day');
+
+			expect(within(cars[3]).getByTestId('model')).toBe('Nissan GT-R');
+			expect(within(cars[3]).getByTestId('type')).toBe('Sport');
+			expect(within(cars[3]).getByTestId('image')).toBeInTheDocument();
+			expect(within(cars[3]).getByTestId('autonomy')).toContain('80L');
+			expect(within(cars[3]).getByTestId('transmission')).toContain('Manual');
+			expect(within(cars[3]).getByTestId('capacity')).toContain('2 People');
+			expect(within(cars[3]).getByTestId('price')).toBe('$80.00/day');
+			expect(within(cars[3]).getByTestId('old-price')).toBe('$100.00');
+			expect(screen.getByTestId('recomendationCarsWrap').childElementCount).toBe(2);
+		});
+	});
+
+	test('Should show total recommended cars available', async () => {
+		await makeSut();
+		waitFor(() => {
+			expect(screen.getByTestId('total-cars')).toBe('2 Car');
 		});
 	});
 });

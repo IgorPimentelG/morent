@@ -11,7 +11,7 @@ class RemoteLoadCarsSpy implements LoadCars {
 		return new Promise(() => {
 			setTimeout(() => {
 				return mockCars();
-			}, 5000);
+			}, 10000);
 		});
 	}
 
@@ -20,7 +20,7 @@ class RemoteLoadCarsSpy implements LoadCars {
 		return new Promise(() => {
 			setTimeout(() => {
 				return mockCars();
-			}, 5000);
+			}, 1000);
 		});
 	}
 }

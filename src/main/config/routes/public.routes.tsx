@@ -7,7 +7,7 @@ const PublicRoutes = () => {
 	return (
 		<Routes>
 			<Route path="/" element={<Navigate to="/home"/>} />
-			<Route path="/home" element={MakeHomePage()}/>
+			<Route path="/home" element={MakeHomePage()} />
 		</Routes>
 	);
 };
