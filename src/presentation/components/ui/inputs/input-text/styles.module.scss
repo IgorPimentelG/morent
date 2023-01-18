@@ -1,0 +1,26 @@
+@import "../../../../styles/colors";
+
+.inputWrap {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	label {
+		font-weight: 600;
+		font-size: 14px;
+		color: $secondary-500;
+	}
+
+	input {
+		border: none;
+		outline: none;
+		background-color: #F6F7F9;
+		padding: 16px;
+		border-radius: 10px;
+		color: $secondary-300;
+
+		&::placeholder {
+			color: $secondary-300;
+		}
+	}
+}
