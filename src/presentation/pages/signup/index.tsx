@@ -2,13 +2,14 @@ import React from 'react';
 import { BsGoogle, BsGithub, BsTwitter } from 'react-icons/bs';
 
 import styles from './styles.module.scss';
-import { CoverCar } from '@presentation/assets';
+import { CoverCarSignUp } from '@presentation/assets';
+import { Card } from '@presentation/components/layout';
 import { Button, IconButton, InputCheckbox, InputText, Link, Logo } from '@presentation/components/ui';
 
 const SignUp: React.FC = () => {
 	return (
-		<div className={styles.signUpWrap}>
-			<div className={styles.cardWrap}>
+		<main className={styles.signUpWrap}>
+			<Card>
 				<div className={styles.formWrap}>
 					<Logo />
 					<form>
@@ -43,10 +44,10 @@ const SignUp: React.FC = () => {
 					</div>
 				</div>
 				<div className={styles.imageWrap}>
-					<img src={CoverCar} />
+					<img src={CoverCarSignUp} />
 				</div>
-			</div>
-		</div>
+			</Card>
+		</main>
 	);
 };
 

@@ -3,4 +3,5 @@ export { default as GasStation } from './gas-station.png';
 export { default as Transmission } from './transmission.png';
 export { default as Spiral } from './spiral-bg.png';
 export { default as Arrows } from './arrows-bg.png';
-export { default as CoverCar } from './cover-car.jpg';
+export { default as CoverCarSignIn } from './cover-car-signin.jpg';
+export { default as CoverCarSignUp } from './cover-car-signup.jpg';
