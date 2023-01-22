@@ -4,3 +4,5 @@ export * from './icon-profile';
 export * from './inputs';
 export * from './button';
 export * from './link';
+export * from './error';
+
