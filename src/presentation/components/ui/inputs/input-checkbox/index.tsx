@@ -9,8 +9,12 @@ const InputCheckbox: React.FC<Props> = ({ label, ...props }: Props) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	function labelHasClicked () {
-		const currentState = inputRef?.current?.getAttribute('checked');
-		inputRef?.current?.setAttribute('checked', currentState === 'true' ? 'false' : 'true');
+		const isChecked = inputRef.current?.checked;
+		if (!isChecked) {
+			inputRef.current?.setAttribute('checked', 'true');
+		} else {
+			inputRef.current?.removeAttribute('checked');
+		}
 	}
 
 	return (
