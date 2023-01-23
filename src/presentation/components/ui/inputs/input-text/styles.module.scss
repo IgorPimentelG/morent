@@ -12,16 +12,27 @@
 		color: $secondary-500;
 	}
 
-	input {
-		border: none;
-		outline: none;
+	.field {
+		display: flex;
 		background-color: #F6F7F9;
-		padding: 16px;
 		border-radius: 10px;
-		color: $secondary-300;
+		padding: 16px;
 
-		&::placeholder {
+		.btn {
+			width: min-content;
+		}
+
+		input {
+			border: none;
+			outline: none;
+			background-color: #F6F7F9;
 			color: $secondary-300;
+			width: 100%;
+
+			&::placeholder {
+				color: $secondary-300;
+			}
 		}
 	}
+
 }
