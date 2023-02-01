@@ -1,4 +1,5 @@
 @import "../../../styles/colors";
+@import "../../../styles/animations";
 
 .buttonWrap {
 	display: flex;
@@ -44,6 +45,21 @@
 			cursor: default;
 			color: $secondary-200;
 			border: 1px solid $primary-100;
+		}
+	}
+
+	.loadingWrap {
+		display: flex;
+		width: max-content;
+		justify-content: center;
+
+		.loading {
+			border-radius: 20px;
+			border: 5px solid $information-100;
+			border-color: $information-100 $information-100 $information-100 transparent;
+			width: 25px;
+			height: 25px;
+			animation: loading .8s linear infinite;
 		}
 	}
 }

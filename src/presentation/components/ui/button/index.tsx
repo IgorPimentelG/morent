@@ -5,12 +5,19 @@ type StyleType = 'PRIMARY' | 'SECONDARY';
 
 type Props = {
 	label: string;
+	load?: boolean;
 	styleType?: StyleType;
 	disabled?: boolean;
 	action: () => void;
 }
 
-const Button: React.FC<Props> = ({ label, styleType, disabled = false, action }) => {
+const Button: React.FC<Props> = ({
+	label,
+	styleType,
+	load,
+	disabled,
+	action
+}) => {
 	return (
 		<button
 			className={styles.buttonWrap}
@@ -19,7 +26,12 @@ const Button: React.FC<Props> = ({ label, styleType, disabled = false, action })
 			data-type={styleType || 'PRIMARY'}
 			data-testid="button"
 		>
-			<span>{label}</span>
+			{load && (
+				<div className={styles.loadingWrap} data-testid="load">
+					<span className={styles.loading} />
+				</div>
+			)}
+			{!load && <span>{label}</span>}
 		</button>
 	);
 };

@@ -5,7 +5,8 @@ type StyleType = 'PRIMARY' | 'SECONDARY';
 
 type Props = {
 	label: string;
-	styleType: StyleType;
+	load?: boolean;
+	styleType?: StyleType;
 	disabled?: boolean;
 	action: () => void;
 }
@@ -100,5 +101,11 @@ export const SecondaryDisabled: StoryObj<Props> = {
 		label: 'Secondary',
 		styleType: 'SECONDARY',
 		disabled: true
+	}
+};
+
+export const Loading: StoryObj<Props> = {
+	args: {
+		load: true
 	}
 };
