@@ -1,4 +1,4 @@
-import { ServerError } from '@data/errors';
+import { EmailInUseError, ServerError } from '@data/errors';
 import { HttpClient, HttpStatus } from '@data/protocols';
 import { AddAccount, AddAccountParams } from '@domain/usecases';
 
@@ -16,8 +16,9 @@ export class RemoteAddAccount implements AddAccount {
 			body: params
 		});
 
-		if (response.statusCode === HttpStatus.serverError) {
-			throw new ServerError();
+		switch (response.statusCode) {
+		case HttpStatus.serverError: throw new ServerError();
+		case HttpStatus.badRequest: throw new EmailInUseError();
 		}
 	}
 }
