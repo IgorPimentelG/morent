@@ -1,0 +1,58 @@
+@import "../../../styles/colors";
+
+.wrap {
+	display: flex;
+	position: fixed;
+	min-width: 100vw;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba($secondary-300, 0.7);
+	z-index: 999;
+
+	.modalWrap {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		padding: 16px;
+		width: 400px;
+		border-radius: 15px;
+		background-color: $white;
+
+		.header {
+			display: flex;
+			justify-content: space-between;
+
+			div {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 10px;
+				height: 50px;
+				width: 50px;
+				background-color: rgba($secondary-300, 0.2);
+
+				img {
+					object-fit: contain;
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+
+		.info {
+			p {
+				margin-top: 4px;
+				font-size: 12px;
+			}
+		}
+
+		.footer {
+			display: flex;
+			gap: 8px;
+			justify-content: flex-end;
+		}
+	}
+}
+
+
