@@ -10,7 +10,7 @@ type Props = {
 const Link: React.FC<Props> = ({ label, to }) => {
 	return (
 		<>
-			<LinkRouter to={to} className={styles.link}>
+			<LinkRouter to={to} className={`${styles.link}`} data-testid='link'>
 				{label}
 			</LinkRouter>
 		</>

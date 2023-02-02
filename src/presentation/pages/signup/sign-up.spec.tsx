@@ -1,9 +1,7 @@
-import ReactDOM from 'react-dom';
-import { ReactNode, ReactPortal } from 'react';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import { faker } from '@faker-js/faker';
-import { screen, fireEvent, render, waitFor, act } from '@testing-library/react';
+import { screen, fireEvent, render, waitFor, cleanup, act } from '@testing-library/react';
 
 import { SignUp } from '@presentation/pages';
 import { RemoteAddAccountSpy } from '@presentation/test';
@@ -15,19 +13,17 @@ type SutTypes = {
 	remoteAddAccountSpy: RemoteAddAccountSpy;
 }
 
-const makeSut = async (remoteAddAccountSpy = new RemoteAddAccountSpy()): Promise<SutTypes> => {
-	await act(async () => {
-		render(
-			<Router
-				location={history.location}
-				navigator={history}
-			>
-				<SignUp
-					remoteAddAccount={remoteAddAccountSpy}
-				/>
-			</Router>
-		);
-	});
+const makeSut = (remoteAddAccountSpy = new RemoteAddAccountSpy()): SutTypes => {
+	render(
+		<Router
+			location={history.location}
+			navigator={history}
+		>
+			<SignUp
+				remoteAddAccount={remoteAddAccountSpy}
+			/>
+		</Router>
+	);
 
 	return {
 		remoteAddAccountSpy
@@ -46,18 +42,23 @@ const submitForm = async (): Promise<void> => {
 };
 
 describe('SignUp', () => {
-	test('Should start without any error', async () => {
-		await makeSut();
+	afterEach(cleanup);
+
+	test('Should start without any error', () => {
+		makeSut();
 		const errors = screen.queryAllByTestId('error');
 		expect(errors.length).toBe(0);
 	});
 
 	test('Should show required fields', async () => {
-		await makeSut();
-		fireEvent.click(screen.getByTestId('button'));
-		const errors = screen.queryAllByTestId('error');
-		errors.forEach((error) => {
-			expect(error).toBe('Required field');
+		makeSut();
+		await act(async () => fireEvent.click(screen.getByTestId('button')));
+		await waitFor(() => {
+			const errors = screen.queryAllByTestId('error');
+			expect(errors.length).toBe(4);
+			errors.forEach((error) => {
+				expect(error.textContent).toBe('Required field');
+			});
 		});
 	});
 
@@ -78,6 +79,14 @@ describe('SignUp', () => {
 			expect(errors[0].textContent).toBe('Enter a valid e-mail');
 			expect(errors[1].textContent).toBe('Enter a minimum of 8 characters');
 			expect(errors[2].textContent).toBe('Passwords must match');
+		});
+	});
+
+	test('Should redirect to sign in page', async () => {
+		makeSut();
+		await waitFor(() => {
+			fireEvent.click(screen.getByTestId('link'));
+			expect(history.location.pathname).toBe('/signin');
 		});
 	});
 });
