@@ -8,7 +8,7 @@ type Props = {
 const Error: React.FC<Props> = ({ message }) => {
 	return (
 		<div className={styles.errorWrap}>
-			<span>{message}</span>
+			<span data-testid="error">{message}</span>
 		</div>
 	);
 };

@@ -56,8 +56,8 @@ const Footer: React.FC = () => {
 					<span>© 2023 MORENT. All rights reserved</span>
 				</div>
 				<div>
-					<a>Privacy & Policy</a>
-					<a>Terms & Condition</a>
+					<span>Privacy & Policy</span>
+					<span>Terms & Condition</span>
 				</div>
 			</section>
 		</footer>

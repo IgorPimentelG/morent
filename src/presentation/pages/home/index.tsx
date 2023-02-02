@@ -116,7 +116,7 @@ const Home: React.FC<Props> = ({ loadAdvertisements, loadCars }) => {
 					<div className={styles.sectionTitle}>
 						<span>Recomendation Car</span>
 					</div>
-					<div className={styles.list} data-testId="recomendationCarsWrap">
+					<div className={styles.list} data-testid="recomendationCarsWrap">
 						{carContext.recomendationCarsIsLoading ? (
 							<>
 								{Array.from(Array(4), () => (

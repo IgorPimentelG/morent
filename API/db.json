@@ -279,7 +279,7 @@
       }
     },
     {
-      "id": "117fac8e-1a71-44f1-89eb-9ebd12d59c71",
+      "id": "117fac8e-1a71-44f1-89eb-9ebd12d59c89",
       "model": "NewMGZS",
       "type": "SUV",
       "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
@@ -370,6 +370,13 @@
       "password": "JPWMisexcwU6jjW#",
       "passwordConfirmation": "JPWMisexcwU6jjW#",
       "id": 1
+    },
+    {
+      "name": "Dev",
+      "email": "dev@mail.com",
+      "password": "JPWMisexcwU6jjW#",
+      "passwordConfirmation": "JPWMisexcwU6jjW#",
+      "id": 2
     }
   ]
 }

@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { BsGoogle, BsGithub, BsTwitter } from 'react-icons/bs';
 
 import styles from './styles.module.scss';
+import { AddAccount } from '@domain/usecases';
 import { CoverCarSignUp } from '@presentation/assets';
-import { Card } from '@presentation/components/layout';
-import { Button, IconButton, InputCheckbox, InputText, Link, Logo } from '@presentation/components/ui';
+import { Card, Modal, ModalParams } from '@presentation/components/layout';
 import { signUpValidation } from '@presentation/shared/schemas';
+import {
+	Button,
+	IconButton,
+	InputCheckbox,
+	InputText,
+	Link,
+	Logo
+} from '@presentation/components/ui';
 
 type SignUpForm = {
 	name: string;
@@ -16,14 +24,40 @@ type SignUpForm = {
 	passwordConfirmation: string;
 }
 
-const SignUp: React.FC = () => {
+type Props = {
+	remoteAddAccount: AddAccount;
+}
+
+const SignUp: React.FC<Props> = ({ remoteAddAccount }) => {
+
+	const [isLoad, setIsLoad] = useState<boolean>(false);
+	const [configModal, setConfigModal] = useState<ModalParams>({ isVisible: false });
 
 	const { register, formState: { errors }, handleSubmit } = useForm<SignUpForm>({
 		resolver: yupResolver(signUpValidation)
 	});
 
-	function onSubmit(data: SignUpForm) {
-		console.log('🚀 ~ file: index.tsx:26 ~ onSubmit ~ data', data);
+	async function onSubmit(data: SignUpForm) {
+		setIsLoad(true);
+		try {
+			await remoteAddAccount.add(data);
+			setConfigModal({
+				isVisible: true,
+				level: 'SUCCESS',
+				message: 'Your account has been registered. Check your email to continue.'
+			});
+		} catch (error: any) {
+			setConfigModal({
+				isVisible: true,
+				level: 'ERROR',
+				message: error.message
+			});
+		}
+		setIsLoad(false);
+	}
+
+	function onConfirmModal() {
+		setConfigModal({ isVisible: false });
 	}
 
 	return (
@@ -66,7 +100,7 @@ const SignUp: React.FC = () => {
 						<div className={styles.checkbox}>
 							<InputCheckbox label='I agree to the terms & conditions' />
 						</div>
-						<Button label='Sign Up' action={handleSubmit(onSubmit)} />
+						<Button label='Sign Up' load={isLoad} action={handleSubmit(onSubmit)} />
 					</form>
 
 					<div className={styles.divider}>
@@ -93,6 +127,13 @@ const SignUp: React.FC = () => {
 					<img src={CoverCarSignUp} />
 				</div>
 			</Card>
+			{configModal.isVisible && (
+				<Modal
+					level={configModal.level!}
+					message={configModal.message!}
+					onConfirmation={onConfirmModal}
+				/>
+			)}
 		</main>
 	);
 };

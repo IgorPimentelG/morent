@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
+import { Link as LinkRouter } from 'react-router-dom';
 
 type Props = {
 	label: string;
@@ -9,9 +10,9 @@ type Props = {
 const Link: React.FC<Props> = ({ label, to }) => {
 	return (
 		<>
-			<a className={styles.link} href={to}>
+			<LinkRouter to={to} className={styles.link}>
 				{label}
-			</a>
+			</LinkRouter>
 		</>
 	);
 };

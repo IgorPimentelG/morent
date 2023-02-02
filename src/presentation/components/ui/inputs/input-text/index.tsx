@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { UseFormRegister } from 'react-hook-form';
 import { FiEye, FiEyeOff } from 'react-icons/FI';
 
@@ -14,21 +14,29 @@ type Props = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>
 
 const InputText: React.FC<Props> = ({ label, name, error, register, ...props }) => {
 
-	const inputRef = useRef<HTMLInputElement>(null);
-	const [hideText, setHideText] = useState<boolean>(false);
+	const [hideText, setHideText] = useState<boolean>(true);
 
 	function changeView() {
 		setHideText(!hideText);
-		inputRef.current?.setAttribute('type',  hideText ? 'password' : 'text');
 	}
 
 	return (
 		<div className={styles.inputWrap}>
 			<label>{label}</label>
 			<div className={styles.field}>
-				<input {...props} {...register(name)} ref={inputRef} />
+				<input
+					{...props}
+					{...register(name)}
+					data-testid={`input-${name}`}
+					type={props.type === 'password' && hideText ? 'password' : 'text'}
+				/>
 				{props.type === 'password' && (
-					<button className={styles.btn} onClick={changeView} type='button'>
+					<button
+						className={styles.btn}
+						onClick={changeView}
+						type='button'
+						data-testid='btn-change-view'
+					>
 						{hideText ? (
 							<FiEye />
 						) : (

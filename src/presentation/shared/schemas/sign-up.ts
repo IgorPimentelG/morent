@@ -3,8 +3,8 @@ import { messagePatterns, regexPatterns } from '../utils';
 
 export const signUpValidation = yup.object().shape({
 	name: yup.string()
-		.required(messagePatterns['required'])
-		.trim(),
+		.trim()
+		.required(messagePatterns['required']),
 	email: yup.string()
 		.email(messagePatterns['email']).
 		required(messagePatterns['required']),
