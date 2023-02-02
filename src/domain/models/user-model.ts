@@ -4,4 +4,5 @@ export type UserModel = {
 	name: string;
 	profession: string;
 	profileImage?: string;
+	token: string;
 }
