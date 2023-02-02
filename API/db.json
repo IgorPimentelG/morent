@@ -1,306 +1,375 @@
 {
-	"ads": [
-		{
-			"id": "d860cfde-9266-49dd-b84c-7dc1edb48978",
-			"title": "The Best Platform for Car Rental",
-			"description": "Ease of doing a car rental safely and reliably. Of course at a low price.",
-			"image": "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673361431/MORENT/image_7_1_da9ggu.png",
-			"date": {
-				"start": "2023-01-01T00:00:00",
-				"end": "2023-02-01T00:00:00"
-			}
-		},
-		{
-			"id": "8c2a9782-0bfc-48b5-a517-88110e1f53ef",
-			"title": "Easy way to rent a car at a low price",
-			"description": "Providing cheap car rental services and safe and comfortable facilities.",
-			"image": "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673361433/MORENT/image_8_r9dqk6.png",
-			"date": {
-				"start": "2023-01-01T00:00:00",
-				"end": "2023-02-01T00:00:00"
-			}
-		}
-	],
-	"allCars": [
-		{
-			"id": "5ab8e328-4ead-49b2-a3d1-1ef8205d12ee",
-			"model": "Koenigsegg",
-			"type": "Sport",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 2,
-			"autonomy": 90,
-			"category": "popular",
-			"transmission": "Manual",
-			"price": 99.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/car_3_fr8m8i.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "1e50eaab-cf92-4444-b073-4832bd7d63ae",
-			"model": "Nissan GT - R",
-			"type": "Sport",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 2,
-			"autonomy": 80,
-			"category": "popular",
-			"transmission": "Manual",
-			"price": 80.00,
-			"oldPrice": 100.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/car_2_zprjwe.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "42506a68-9649-4a93-8f2b-54c335e03f47",
-			"model": "Rolls - Royce",
-			"type": "Sedan",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 4,
-			"autonomy": 70,
-			"category": "popular",
-			"transmission": "Manual",
-			"price": 96.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/Car_4_caobcb.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "dbaede00-769f-451c-a601-56687f0dc90c",
-			"model": "Nissan GT - R",
-			"type": "Sport",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 2,
-			"autonomy": 80,
-			"category": "popular",
-			"transmission": "Manual",
-			"price": 80.00,
-			"oldPrice": 100.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/Car_5_ugs5gu.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "42dbcd6f-dd91-4889-bd69-ee41680eb898",
-			"model": "All New Rush",
-			"type": "SUV",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 6,
-			"autonomy": 70,
-			"category": "recomendation",
-			"transmission": "Manual",
-			"price": 72.00,
-			"oldPrice": 80.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1674044977/MORENT/Car_1_1_itiu4m.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "3e51e52a-9f6d-4c6b-9819-5d9179cf45e8",
-			"model": "CR -V ",
-			"type": "SUV",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 6,
-			"autonomy": 80,
-			"category": "recomendation",
-			"transmission": "Manual",
-			"price": 80.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727128/MORENT/Car_5_ut03pr.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "e0dfdbb2-6d28-4a71-bd59-0f23b6498be0",
-			"model": "All New Terios",
-			"type": "Sedan",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 6,
-			"autonomy": 90,
-			"category": "recomendation",
-			"transmission": "Manual",
-			"price": 74.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727128/MORENT/Car_4_tvrlcr.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "4845c5ca-9f09-450f-9565-f500eba17c94",
-			"model": "CR - V",
-			"type": "SUV",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 6,
-			"autonomy": 80,
-			"category": "recomendation",
-			"transmission": "Manual",
-			"price": 80.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/Car_5_ugs5gu.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "117fac8e-1a71-44f1-89eb-9ebd12d59c71",
-			"model": "MGZX Exclusive",
-			"type": "Hatchback",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 4,
-			"autonomy": 70,
-			"category": "recomendation",
-			"transmission": "Manual",
-			"price": 76.00,
-			"oldPrice": 80.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727129/MORENT/Car_8_glmuak.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "117fac8e-1a71-44f1-89eb-9ebd12d59c71",
-			"model": "NewMGZS",
-			"type": "SUV",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 6,
-			"autonomy": 80,
-			"category": "recomendation",
-			"transmission": "Manual",
-			"price": 80.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727128/MORENT/Car_7_xpyjre.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "723cbaad-992f-4cba-8a41-bf96d5b9c41a",
-			"model": "MGZXExcite",
-			"type": "Hatchback",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 4,
-			"autonomy": 90,
-			"category": "recomendation",
-			"transmission": "Manual",
-			"price": 74.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727129/MORENT/Car_8_glmuak.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		},
-		{
-			"id": "51be2a05-48ae-4835-ad2a-d06989f6f310",
-			"model": "NewMGZS",
-			"type": "SUV",
-			"description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
-			"capacity": 6,
-			"autonomy": 80,
-			"category": "recomendation",
-			"transmission": "Manual",
-			"price": 80.00,
-			"images": ["https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727129/MORENT/Car_10_xyo5ub.png"],
-			"availability": {
-				"locations": ["New York", "London"],
-				"date": {
-					"start": "2023-01-01T00:00:00",
-					"end": "2023-02-01T00:00:00"
-				},
-				"time": {
-					"start": "2023-01-01T10:00:00",
-					"end": "2023-02-01T10:00:00"
-				}
-			}
-		}
-	]
+  "ads": [
+    {
+      "id": "d860cfde-9266-49dd-b84c-7dc1edb48978",
+      "title": "The Best Platform for Car Rental",
+      "description": "Ease of doing a car rental safely and reliably. Of course at a low price.",
+      "image": "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673361431/MORENT/image_7_1_da9ggu.png",
+      "date": {
+        "start": "2023-01-01T00:00:00",
+        "end": "2023-02-01T00:00:00"
+      }
+    },
+    {
+      "id": "8c2a9782-0bfc-48b5-a517-88110e1f53ef",
+      "title": "Easy way to rent a car at a low price",
+      "description": "Providing cheap car rental services and safe and comfortable facilities.",
+      "image": "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673361433/MORENT/image_8_r9dqk6.png",
+      "date": {
+        "start": "2023-01-01T00:00:00",
+        "end": "2023-02-01T00:00:00"
+      }
+    }
+  ],
+  "allCars": [
+    {
+      "id": "5ab8e328-4ead-49b2-a3d1-1ef8205d12ee",
+      "model": "Koenigsegg",
+      "type": "Sport",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 2,
+      "autonomy": 90,
+      "category": "popular",
+      "transmission": "Manual",
+      "price": 99,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/car_3_fr8m8i.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "1e50eaab-cf92-4444-b073-4832bd7d63ae",
+      "model": "Nissan GT - R",
+      "type": "Sport",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 2,
+      "autonomy": 80,
+      "category": "popular",
+      "transmission": "Manual",
+      "price": 80,
+      "oldPrice": 100,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/car_2_zprjwe.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "42506a68-9649-4a93-8f2b-54c335e03f47",
+      "model": "Rolls - Royce",
+      "type": "Sedan",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 4,
+      "autonomy": 70,
+      "category": "popular",
+      "transmission": "Manual",
+      "price": 96,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/Car_4_caobcb.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "dbaede00-769f-451c-a601-56687f0dc90c",
+      "model": "Nissan GT - R",
+      "type": "Sport",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 2,
+      "autonomy": 80,
+      "category": "popular",
+      "transmission": "Manual",
+      "price": 80,
+      "oldPrice": 100,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/Car_5_ugs5gu.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "42dbcd6f-dd91-4889-bd69-ee41680eb898",
+      "model": "All New Rush",
+      "type": "SUV",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 6,
+      "autonomy": 70,
+      "category": "recomendation",
+      "transmission": "Manual",
+      "price": 72,
+      "oldPrice": 80,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1674044977/MORENT/Car_1_1_itiu4m.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "3e51e52a-9f6d-4c6b-9819-5d9179cf45e8",
+      "model": "CR -V ",
+      "type": "SUV",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 6,
+      "autonomy": 80,
+      "category": "recomendation",
+      "transmission": "Manual",
+      "price": 80,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727128/MORENT/Car_5_ut03pr.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "e0dfdbb2-6d28-4a71-bd59-0f23b6498be0",
+      "model": "All New Terios",
+      "type": "Sedan",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 6,
+      "autonomy": 90,
+      "category": "recomendation",
+      "transmission": "Manual",
+      "price": 74,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727128/MORENT/Car_4_tvrlcr.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "4845c5ca-9f09-450f-9565-f500eba17c94",
+      "model": "CR - V",
+      "type": "SUV",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 6,
+      "autonomy": 80,
+      "category": "recomendation",
+      "transmission": "Manual",
+      "price": 80,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673471723/MORENT/Car_5_ugs5gu.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "117fac8e-1a71-44f1-89eb-9ebd12d59c71",
+      "model": "MGZX Exclusive",
+      "type": "Hatchback",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 4,
+      "autonomy": 70,
+      "category": "recomendation",
+      "transmission": "Manual",
+      "price": 76,
+      "oldPrice": 80,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727129/MORENT/Car_8_glmuak.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "117fac8e-1a71-44f1-89eb-9ebd12d59c71",
+      "model": "NewMGZS",
+      "type": "SUV",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 6,
+      "autonomy": 80,
+      "category": "recomendation",
+      "transmission": "Manual",
+      "price": 80,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727128/MORENT/Car_7_xpyjre.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "723cbaad-992f-4cba-8a41-bf96d5b9c41a",
+      "model": "MGZXExcite",
+      "type": "Hatchback",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 4,
+      "autonomy": 90,
+      "category": "recomendation",
+      "transmission": "Manual",
+      "price": 74,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727129/MORENT/Car_8_glmuak.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    },
+    {
+      "id": "51be2a05-48ae-4835-ad2a-d06989f6f310",
+      "model": "NewMGZS",
+      "type": "SUV",
+      "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track'.",
+      "capacity": 6,
+      "autonomy": 80,
+      "category": "recomendation",
+      "transmission": "Manual",
+      "price": 80,
+      "images": [
+        "https://res.cloudinary.com/ddzqg7ugy/image/upload/v1673727129/MORENT/Car_10_xyo5ub.png"
+      ],
+      "availability": {
+        "locations": [
+          "New York",
+          "London"
+        ],
+        "date": {
+          "start": "2023-01-01T00:00:00",
+          "end": "2023-02-01T00:00:00"
+        },
+        "time": {
+          "start": "2023-01-01T10:00:00",
+          "end": "2023-02-01T10:00:00"
+        }
+      }
+    }
+  ],
+  "users": [
+    {
+      "name": "Dev",
+      "email": "dev@mail.com",
+      "password": "JPWMisexcwU6jjW#",
+      "passwordConfirmation": "JPWMisexcwU6jjW#",
+      "id": 1
+    }
+  ]
 }

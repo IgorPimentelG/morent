@@ -4,7 +4,7 @@ import { HttpClientSpy } from '@data/test/http-client-spy';
 import { RemoteAddAccount } from './remote-add-account';
 import { mockNewAccount } from '@domain/test';
 import { HttpStatus } from '@data/protocols';
-import { ServerError } from '@data/errors';
+import { EmailInUseError, ServerError } from '@data/errors';
 
 type SutTypes = {
 	httpClientSpy: HttpClientSpy;
@@ -43,5 +43,14 @@ describe('RemoteAddAccount', () => {
 		};
 		const response = sut.add(mockNewAccount());
 		await expect(response).rejects.toThrow(new ServerError());
+	});
+
+	test('Should throw EmailInUseError if an email has already been registered', async () => {
+		const { sut, httpClientSpy } = makeSut();
+		httpClientSpy.response = {
+			statusCode: HttpStatus.badRequest
+		};
+		const response = sut.add(mockNewAccount());
+		await expect(response).rejects.toThrow(new EmailInUseError());
 	});
 });
