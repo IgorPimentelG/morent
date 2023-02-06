@@ -5,7 +5,7 @@ import { RemoteAuthentication } from '@data/usecases';
 import { mockCredentials, mockUser } from '@domain/test';
 import { HttpStatus } from '@data/protocols';
 import { UnauthorizedError } from '@data/errors';
-import { BadRequestError } from '@data/errors/bad-request-error';
+import { BadRequestError } from '@data/errors';
 
 type SutTypes = {
 	httpClientSpy: HttpClientSpy;

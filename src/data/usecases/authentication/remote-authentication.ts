@@ -1,5 +1,5 @@
 import { UnauthorizedError } from '@data/errors';
-import { BadRequestError } from '@data/errors/bad-request-error';
+import { BadRequestError } from '@data/errors';
 import { HttpClient, HttpStatus } from '@data/protocols';
 import { UserModel } from '@domain/models';
 import { Authentication, AuthenticationParams } from '@domain/usecases';
