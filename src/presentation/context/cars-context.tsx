@@ -1,4 +1,9 @@
-import React, { createContext, ReactNode, useState } from 'react';
+import React, {
+	createContext,
+	ReactNode,
+	useState,
+	useMemo
+} from 'react';
 import { CarModel } from '@domain/models';
 
 type Props = {
@@ -32,18 +37,28 @@ const CarProvider: React.FC<Props> = ({ children }: Props) => {
 	const [recomendationCarsIsLoading, setRecomendationCarsIsLoading] = useState<boolean>(false);
 	const [popular, setPopular] = useState<CarModel[]>([]);
 	const [recomendation, setRecomendation] = useState<CarModel[]>([]);
+	const carProviderValues = useMemo(() => ({
+		popularCarsIsLoading,
+		recomendationCarsIsLoading,
+		popular,
+		recomendation,
+		setPopularCarsIsLoading,
+		setRecomendationCarsIsLoading,
+		setPopular,
+		setRecomendation
+	}), [
+		popularCarsIsLoading,
+		recomendationCarsIsLoading,
+		popular,
+		recomendation,
+		setPopularCarsIsLoading,
+		setRecomendationCarsIsLoading,
+		setPopular,
+		setRecomendation
+	]);
 
 	return (
-		<CarContext.Provider value={{
-			popularCarsIsLoading,
-			recomendationCarsIsLoading,
-			popular,
-			recomendation,
-			setPopularCarsIsLoading,
-			setRecomendationCarsIsLoading,
-			setPopular,
-			setRecomendation
-		}}>
+		<CarContext.Provider value={carProviderValues}>
 			{children}
 		</CarContext.Provider>
 	);

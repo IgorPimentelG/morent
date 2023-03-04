@@ -4,3 +4,4 @@ tsconfig*.json
 vite.config.js
 covarege
 jest.config.*
+*.yaml

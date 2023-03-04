@@ -1,6 +1,5 @@
 import { ServerError } from '@data/errors';
-import { HttpTest } from '@data/protocols';
-import { HttpClient, HttpStatus } from '@data/protocols';
+import { HttpClient, HttpStatus, HttpTest } from '@data/protocols';
 
 export class RemoteHttpTest implements HttpTest {
 	constructor(

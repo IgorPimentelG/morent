@@ -14,8 +14,8 @@ const Links: React.FC<Props> = ({ title, options }) => {
 		<div className={styles.linksWrap}>
 			<h4>{title}</h4>
 			<div className={styles.optionsWrap}>
-				{options.map((option, index) => (
-					<a key={index} href={option.value}>
+				{options.map((option) => (
+					<a key={option.value} href={option.value}>
 						{option.label}
 					</a>
 				))}

@@ -45,8 +45,8 @@ const Footer: React.FC = () => {
 					</span>
 				</div>
 				<div className={styles.links}>
-					{options.map((item, index) => (
-						<Links key={index} {...item} />
+					{options.map((item) => (
+						<Links key={item.title} {...item} />
 					))}
 				</div>
 			</section>

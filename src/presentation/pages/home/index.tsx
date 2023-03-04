@@ -71,7 +71,7 @@ const Home: React.FC<Props> = ({ loadAdvertisements, loadCars }) => {
 						<>
 							{advertisingContext.advertisements.map((item, index) => (
 								<CardAdvertising
-									key={index}
+									key={item.id}
 									advertising={item}
 									action={() => {}}
 									variant={index / 2 === 0 ? 'PRIMARY' : 'SECONDARY'}
