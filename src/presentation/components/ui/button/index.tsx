@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './styles.module.scss';
 
 type StyleType = 'PRIMARY' | 'SECONDARY';
@@ -8,6 +8,7 @@ type Props = {
 	load?: boolean;
 	styleType?: StyleType;
 	disabled?: boolean;
+	icon?: ReactNode;
 	action: () => void;
 }
 
@@ -15,6 +16,7 @@ const Button: React.FC<Props> = ({
 	label,
 	styleType,
 	load,
+	icon,
 	disabled,
 	action
 }) => {
@@ -31,7 +33,14 @@ const Button: React.FC<Props> = ({
 					<span className={styles.loading} />
 				</div>
 			)}
-			{!load && <span>{label}</span>}
+			{!load && (
+				<>
+					<div className={styles.icon}>
+						{icon}
+					</div>
+					<span>{label}</span>
+				</>
+			)}
 		</button>
 	);
 };

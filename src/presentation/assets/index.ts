@@ -8,3 +8,5 @@ export { default as Warning } from './warning.png';
 export { default as Error } from './error.png';
 export { default as CoverCarSignIn } from './cover-car-signin.jpg';
 export { default as CoverCarSignUp } from './cover-car-signup.jpg';
+export { default as ErroBackground } from './error-background.png';
+export { default as ErrorPlate } from './error-plate.png';

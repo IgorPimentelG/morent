@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router';
 
-import { RecoverPassword } from '@presentation/pages';
+import { NotFoundError, RecoverPassword, ServerError } from '@presentation/pages';
 import {
 	MakeHomePage,
 	MakeUserAuthPage
@@ -12,7 +12,9 @@ const PublicRoutes = () => {
 			<Route path="/" element={<Navigate to="/home"/>} />
 			<Route path="/home" element={MakeHomePage()} />
 			<Route path="/auth" element={MakeUserAuthPage()} />
-			<Route path="/recover-password" element={<RecoverPassword />} />
+			<Route path="/recover-password" element={<RecoverPassword/>} />
+			<Route path="/server-error" element={<ServerError/>} />
+			<Route path="*" element={<NotFoundError/>} />
 		</Routes>
 	);
 };
