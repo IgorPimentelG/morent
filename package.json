@@ -14,7 +14,8 @@
     "build-storybook": "build-storybook",
     "api": "json-server ./API/db.json --routes ./API/routes.json --port 5050 --watch",
     "prepare": "husky install",
-    "fixer": "eslint --fix --ext .ts ."
+    "fixer": "eslint --fix --ext .ts .",
+		"sonar-scanner": "node --trace-warnings ./sonarqube/sonarscan.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
